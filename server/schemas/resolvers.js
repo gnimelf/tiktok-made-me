@@ -5,8 +5,8 @@ const resolvers = {
         profiles: async () => {
             return Profile.find().populate('posts');
         },
-        profile: async (parent, { profileId }) => {
-            return Profile.findOne({ id_: profileId }).populate('posts');
+        profile: async (parent, { userName }) => {
+            return Profile.findOne({ id_: userName }).populate('posts');
         },
         posts: async () => {
             return Post.find({});
@@ -18,16 +18,18 @@ const resolvers = {
 
     Mutation: {
         addProfile: async (parent, { firstName, lastName, posts }) => {
-            return await Profile.create({ firstName, lastName, posts });
+            return await Profile.create({ firstName, lastName, email, userName, posts });
         },
-        addPost: async (parent, { profileId, title, description }) => {
+        addPost: async (parent, { userName, url, image, title, description }) => {
             const post = await Post.create({
-                profileId,
+                userName,
+                image,
+                url,
                 title,
                 description,
             });
             await Profile.findOneAndUpdate(
-                { _id: profileId },
+                { userName: userName },
                 {
                     $addToSet: {
                         posts: post._id,

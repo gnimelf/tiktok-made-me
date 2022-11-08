@@ -3,6 +3,7 @@ const { gql } = require("apollo-server-express");
 const typeDefs = gql`
     type Profile {
         _id: ID
+        userName: String
         firstName: String
         lastName: String
         posts: [Post]
@@ -10,7 +11,9 @@ const typeDefs = gql`
 
     type Post {
         _id: ID
-        profileId: String
+        userName: String
+        url: String
+        image: String  
         title: String
         description: String
     }
