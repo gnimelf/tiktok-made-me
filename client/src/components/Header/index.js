@@ -4,7 +4,7 @@ export default function Header () {
     return (
         <header>
         {/* logo */}
-        <img id="logo" src="logo.png"/>
+        <img id="logo" src="circle_logo.png"/>
         {/* Blue wave */}
         <svg id="shape0" width="100%" height="1474.56pt">
             <path
