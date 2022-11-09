@@ -33,3 +33,23 @@ nav {
   position: absolute;
   z-index: -1;
 }
+
+.product-image{
+  margin-right: 20px;
+  width: 150px;
+  height: 150px;
+}
+
+.buy-item {
+  border: 0px;
+  background-color: rgb(38, 243, 240);
+}
+
+.add-comment {
+  border: 0px;
+  background-color: rgb(255, 97, 146);
+}
+
+.add-comment:hover {
+  background-color: rgb(255, 70, 115);
+}
