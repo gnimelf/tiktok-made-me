@@ -1,4 +1,5 @@
 main {
+  max-width: 1820px;
   width: 100%;
   padding: 0 50px;
   margin-top: 250px;
@@ -52,11 +53,33 @@ header {
   background-color: rgb(38, 243, 240);
 }
 
+.btn-info:hover, .btn-info:focus, 
+.btn-info:active, .btn-info:active:focus, .btn-info:active:hover, .btn-info:active.focus,
+.btn-info.active, .btn-info.active:focus, .btn-info.active:hover, .btn-info.active.focus,
+.open > .dropdown-toggle.btn-info, 
+.open > .dropdown-toggle.btn-info:hover,
+.open > .dropdown-toggle.btn-info:focus, 
+.open > .dropdown-toggle.btn-info.focus,
+.btn-info.disabled:hover, .btn-info[disabled]:hover, fieldset[disabled] .btn-info:hover,
+.btn-info.disabled:focus, .btn-info[disabled]:focus, fieldset[disabled] .btn-info:focus,
+.btn-info.disabled.focus, .btn-info[disabled].focus, fieldset[disabled] .btn-info.focus {
+  background-color:rgb(31, 200, 197);
+}
+
 .add-comment {
   border: 0px;
   background-color: rgb(255, 97, 146);
 }
 
-.add-comment:hover {
-  background-color: rgb(255, 70, 115);
+.btn-primary:hover, .btn-primary:focus, 
+.btn-primary:active, .btn-primary:active:focus, .btn-primary:active:hover, .btn-primary:active.focus,
+.btn-primary.active, .btn-primary.active:focus, .btn-primary.active:hover, .btn-primary.active.focus,
+.open > .dropdown-toggle.btn-primary, 
+.open > .dropdown-toggle.btn-primary:hover,
+.open > .dropdown-toggle.btn-primary:focus, 
+.open > .dropdown-toggle.btn-primary.focus,
+.btn-primary.disabled:hover, .btn-primary[disabled]:hover, fieldset[disabled] .btn-primary:hover,
+.btn-primary.disabled:focus, .btn-primary[disabled]:focus, fieldset[disabled] .btn-primary:focus,
+.btn-primary.disabled.focus, .btn-primary[disabled].focus, fieldset[disabled] .btn-primary.focus {
+  background-color: rgb(255, 61, 109);
 }

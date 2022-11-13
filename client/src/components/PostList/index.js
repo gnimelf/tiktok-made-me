@@ -8,7 +8,7 @@ const PostList = ({ posts }) => {
     return (
         <>
             {posts.map((post) => (
-                <Card key={post._id} className="m-3">
+                <Card key={post._id} className="mx-2 my-2">
                     <Card.Header className="text-center">
                         <strong>{post.title}</strong>
                     </Card.Header>
@@ -23,7 +23,7 @@ const PostList = ({ posts }) => {
                         </Card.Text>
                     </Card.Body>
                     <Card.Footer className="d-flex justify-content-around  align-items-center">
-                        <Button className="add-comment" variant="info">
+                        <Button className="add-comment" variant="primary">
                             Add comment
                         </Button>
                         <a href={post.url}>

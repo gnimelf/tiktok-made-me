@@ -11,7 +11,7 @@ const Home = () => {
     return (
         <main>
             <div >
-            <Row lg={2} xl={3} className=" justify-content-center g-0">
+            <Row xl={3} xxl={4} className="justify-content-center g-0">
                 {loading ? (<div>loading...</div>) : (
                     <PostList posts={posts}/>
                 )}
