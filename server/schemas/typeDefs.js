@@ -4,6 +4,7 @@ const typeDefs = gql`
     type Profile {
         _id: ID
         userName: String
+        password: String
         firstName: String
         lastName: String
         posts: [Post]
@@ -18,16 +19,23 @@ const typeDefs = gql`
         description: String
     }
 
+    type Auth {
+        token: ID!
+        profile: Profile
+    }
+
     type Query {
         profiles: [Profile]
         profile(profileId: ID): Profile
+        me: Profile
         posts: [Post]
         post(_id: ID!): Post
     }
 
     type Mutation {
         addProfile(firstName: String, lastName: String): Profile
-        addPost(profileId:ID, title: String, description: String): Post
+        addPost(profileId:ID, title: String, description: String, userName: String, url: String image: String ): Post
+        login(userName: String!, password: String!): Auth
     }
 `;
 
