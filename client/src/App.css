@@ -7,6 +7,7 @@ main {
   justify-content:space-evenly;
 }
 
+
 div .container {
   margin-left: 40px;
 }
@@ -42,10 +43,32 @@ header {
   z-index: -1;
 }
 
-.product-image{
-  margin-right: 20px;
-  width: 150px;
-  height: 150px;
+.username {
+  text-align: center;
+}
+
+.card {
+  display: flex;
+  justify-content: space-between;
+  max-width: 540px;
+
+}
+
+.card-body {
+  bottom: 0;
+}
+
+.img-col {
+  padding: 50px 0 0 0;
+}
+
+.post-user-name {
+  text-align: center;
+}
+
+.card-footer{
+  display: flex;
+  justify-content: space-around;
 }
 
 .buy-item {
