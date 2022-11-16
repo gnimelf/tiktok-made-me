@@ -11,7 +11,7 @@ const PostList = ({ posts }) => {
         <Card key={post._id} className="card my-2 mx-2" style={{width: "20rem"}}>
           <img src={post.image} className="card-img-top" alt="product"/>
           <div className="card-body">
-          <h5 class="card-title"><strong>{post.title}</strong></h5>
+          <h5 className="card-title"><strong>{post.title}</strong></h5>
             <p className="card-text">
               {post.description}
             </p>

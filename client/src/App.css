@@ -76,6 +76,11 @@ header {
   background-color: rgb(38, 243, 240);
 }
 
+.add-comment, .login-btn {
+  border: 0px;
+  background-color: rgb(255, 97, 146);
+}
+
 .btn-info:hover, .btn-info:focus, 
 .btn-info:active, .btn-info:active:focus, .btn-info:active:hover, .btn-info:active.focus,
 .btn-info.active, .btn-info.active:focus, .btn-info.active:hover, .btn-info.active.focus,
@@ -89,10 +94,7 @@ header {
   background-color:rgb(31, 200, 197);
 }
 
-.add-comment {
-  border: 0px;
-  background-color: rgb(255, 97, 146);
-}
+
 
 .btn-primary:hover, .btn-primary:focus, 
 .btn-primary:active, .btn-primary:active:focus, .btn-primary:active:hover, .btn-primary:active.focus,
