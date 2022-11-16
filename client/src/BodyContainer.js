@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Home from "./pages/Home";
 import Navi from "./components/Navi";
 import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 import Header from "./components/Header";
 
 
@@ -12,8 +13,11 @@ export default function BodyContainer() {
         if (mainSection === "Home") {
             return <Home />;
         }
-        if (mainSection) {
+        if (mainSection === "Login") {
             return <Login />;
+        }
+        if (mainSection === "Signup") {
+            return <Signup />;
         }
     };
 

@@ -11,7 +11,9 @@ export default function Navi(props) {
         if (e.target.name === "Login") {
             props.handlePageChange("Login")
         }
-        
+        if (e.target.name === "Signup") {
+            props.handlePageChange("Signup")
+        }
     }
 
     return (
