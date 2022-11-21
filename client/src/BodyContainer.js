@@ -5,7 +5,6 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Header from "./components/Header";
 
-
 export default function BodyContainer() {
     const [mainSection, setMainSection] = useState("Home");
 
@@ -27,7 +26,6 @@ export default function BodyContainer() {
         <div>
             <Header />
             <Navi handlePageChange={handlePageChange}/>
-
             {renderMainSection()}
         </div>
     );

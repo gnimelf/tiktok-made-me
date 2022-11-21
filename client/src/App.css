@@ -7,7 +7,6 @@ main {
   justify-content:space-evenly;
 }
 
-
 div .container {
   margin-left: 40px;
 }
@@ -48,14 +47,7 @@ header {
 }
 
 .card {
-  display: flex;
-  justify-content: space-between;
-  max-width: 540px;
-
-}
-
-.card-body {
-  bottom: 0;
+  max-width: 275px;
 }
 
 .img-col {
@@ -93,8 +85,6 @@ header {
 .btn-info.disabled.focus, .btn-info[disabled].focus, fieldset[disabled] .btn-info.focus {
   background-color:rgb(31, 200, 197);
 }
-
-
 
 .btn-primary:hover, .btn-primary:focus, 
 .btn-primary:active, .btn-primary:active:focus, .btn-primary:active:hover, .btn-primary:active.focus,
