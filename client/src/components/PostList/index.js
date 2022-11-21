@@ -1,5 +1,6 @@
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import Auth from "../../utils/auth";
 
 const PostList = ({ posts }) => {
     if (!posts.length) {
@@ -25,14 +26,25 @@ const PostList = ({ posts }) => {
                         <p className="card-text">{post.description}</p>
                     </div>
                     <div className="card-footer d-flex justify-content-around  align-items-center">
-                        <Button className="add-comment" variant="primary">
-                            Add comment
-                        </Button>
-                        <a href={post.url}>
-                            <Button className="buy-item" variant="info">
-                                Buy Item
-                            </Button>
-                        </a>
+                        {Auth.loggedIn() ? (
+                            <>
+                                <Button
+                                    className="add-comment"
+                                    variant="primary"
+                                >
+                                    Add comment
+                                </Button>
+                                <Button className="buy-item" variant="info">
+                                    Buy Item
+                                </Button>
+                            </>
+                        ) : (
+                            <a href={post.url}>
+                                <Button className="buy-item" variant="info">
+                                    Buy Item
+                                </Button>
+                            </a>
+                        )}
                     </div>
                 </Card>
             ))}
