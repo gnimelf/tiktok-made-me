@@ -22,7 +22,13 @@ const postSchema = new Schema({
         type: String,
         trim: true,
         required: true
-    }
+    },
+    comments: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: "Comment"
+        },
+    ]
 });
 
 const Post = model('Post', postSchema);

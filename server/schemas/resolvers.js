@@ -1,15 +1,16 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { Profile, Post } = require("../models");
+const { Profile, Post, Comment } = require("../models");
 const { signToken } = require("../utils/auth");
 
 const resolvers = {
     Query: {
         profiles: async () => {
-            return Profile.find().populate("posts");
+            return Profile.find().populate("posts" && "comments");
         },
         profile: async (parent, { userName }) => {
-            return Profile.findOne({ id_: userName }).populate("posts");
+            return Profile.findOne({ id_: userName }).populate( "posts" && "comments");
         },
+
         me: async (parent, args, context) => {
             if (context.user) {
               return Profile.findOne({ _id: context.user._id });
@@ -22,6 +23,12 @@ const resolvers = {
         post: async (parent, { postId }) => {
             return Post.findOne({ id_: postId });
         },
+        comments: async () => {
+            return Comment.find({});
+        },
+        comment: async (parent, { commentId }) => {
+            return Comment.findOne({ id_: commentId })
+        }
     },
 
     Mutation: {

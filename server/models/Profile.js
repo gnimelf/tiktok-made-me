@@ -29,6 +29,12 @@ const profileSchema = new Schema({
             ref: "Post",
         },
     ],
+    comments: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: "Comment"
+        },
+    ]
 });
 
 profileSchema.pre('save', async function (next) {

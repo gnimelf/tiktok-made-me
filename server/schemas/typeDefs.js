@@ -8,6 +8,7 @@ const typeDefs = gql`
         firstName: String
         lastName: String
         posts: [Post]
+        comments: [Comment]
     }
 
     type Post {
@@ -17,6 +18,15 @@ const typeDefs = gql`
         image: String  
         title: String
         description: String
+        comments: [Comment]
+    }
+
+    type Comment {
+        _id: ID
+        userName: String
+        postId: String
+        title: String
+        commentText: String
     }
 
     type Auth {
@@ -30,6 +40,8 @@ const typeDefs = gql`
         me: Profile
         posts: [Post]
         post(_id: ID!): Post
+        comments: [Comment]
+        comment(commentId: ID! ): Comment
     }
 
     type Mutation {
