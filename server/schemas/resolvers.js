@@ -18,10 +18,10 @@ const resolvers = {
             throw new AuthenticationError('You need to be logged in!');
           },
         posts: async () => {
-            return Post.find({});
+            return Post.find({}).populate("comments");
         },
         post: async (parent, { postId }) => {
-            return Post.findOne({ id_: postId });
+            return Post.findOne({ id_: postId }).populate("comments");
         },
         comments: async () => {
             return Comment.find({});
