@@ -23,3 +23,12 @@ mutation AddProfile($firstName: String!, $lastName: String!, $email: String!, $u
   }
 }
 `;
+
+export const REMOVE_COMMENT = gql`
+mutation RemoveComment($commentId: ID!) {
+  removeComment(commentId: $commentId) {
+    _id
+    title
+  }
+}
+`

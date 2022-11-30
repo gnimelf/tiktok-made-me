@@ -19,23 +19,42 @@ query Profiles {
   }
 `;
 
-export const QUERY_SINGLE_PROFILE = gql`
-query Profile($profileId: ID) {
-    profile(profileId: $profileId) {
+export const QUERY_ME = gql`
+query Me {
+  me {
+    firstName
+    lastName
+    userName
+    _id
+    comments {
       _id
       userName
-      firstName
-      lastName
-      posts {
-        _id
-        userName
-        url
-        image
-        title
-        description
-      }
+      postId
+      title
+      commentText
     }
   }
+}
+`
+
+export const QUERY_SINGLE_PROFILE = gql`
+query Post($id: ID!) {
+  post(_id: $id) {
+    _id
+    userName
+    url
+    image
+    title
+    description
+    comments {
+      _id
+      userName
+      postId
+      title
+      commentText
+    }
+  }
+}
 `;
 
 export const QUERY_POSTS = gql`
@@ -52,14 +71,21 @@ query Posts {
 `;
 
 export const QUERY_SINGLE_POST = gql`
-query Post($id: ID!) {
-    post(_id: $id) {
+query Post($postId: ID!) {
+  post(postId: $postId) {
+    _id
+    description
+    image
+    title
+    url
+    userName
+    comments {
       _id
       userName
-      url
-      image
+      postId
       title
-      description
+      commentText
     }
   }
+}
 `;
