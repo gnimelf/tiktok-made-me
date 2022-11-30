@@ -1,13 +1,22 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import BodyContainer from "./BodyContainer";
+import Header from "./components/Header";
+import Navi from "./components/Navi";
+import Home from "./pages/Home";
+import Signup from "./pages/Signup";
+import Login from "./pages/Login";
+import MyComments from "./pages/MyComments";
+import SinglePost from "./pages/SinglePost";
+
 import "./App.css";
 import { setContext } from "@apollo/client/link/context";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {
     ApolloClient,
     InMemoryCache,
     ApolloProvider,
     createHttpLink,
 } from "@apollo/client";
+
 
 // GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -36,7 +45,17 @@ const client = new ApolloClient({
 function App() {
     return (
         <ApolloProvider client={client}>
-            <BodyContainer />
+            <Router>
+                <Header />
+                <Navi />
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/signup" element={<Signup />} />
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/mycomments" element={<MyComments />} />
+                    <Route path="/post/:postId" element={<SinglePost />}/>
+                </Routes>
+            </Router>
         </ApolloProvider>
     );
 }
