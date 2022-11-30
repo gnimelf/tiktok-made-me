@@ -8,26 +8,26 @@ const resolvers = {
             return Profile.find().populate("posts" && "comments");
         },
         profile: async (parent, { userName }) => {
-            return Profile.findOne({ id_: userName }).populate( "posts" && "comments");
+            return Profile.findOne({ _id: userName }).populate( "posts" && "comments");
         },
 
         me: async (parent, args, context) => {
-            if (context.user) {
-              return Profile.findOne({ _id: context.user._id });
+            if (context.profile) {
+              return Profile.findOne({ _id: context.profile._id }).populate("comments");
             }
             throw new AuthenticationError('You need to be logged in!');
           },
         posts: async () => {
-            return Post.find({}).populate("comments");
+            return Post.find().populate("comments");
         },
         post: async (parent, { postId }) => {
-            return Post.findOne({ id_: postId }).populate("comments");
+            return Post.findOne({ _id: postId }).populate("comments");
         },
         comments: async () => {
             return Comment.find({});
         },
         comment: async (parent, { commentId }) => {
-            return Comment.findOne({ id_: commentId })
+            return Comment.findOne({ _id: commentId })
         }
     },
 
@@ -81,6 +81,10 @@ const resolvers = {
 
             return { token, profile };
         },
+        removeComment: async (parent, { commentId }) => {
+            const comment = await Comment.findOneAndDelete( { _id: commentId })
+            return comment;
+        }
     },
 };
 

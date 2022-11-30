@@ -39,7 +39,7 @@ const typeDefs = gql`
         profile(profileId: ID): Profile
         me: Profile
         posts: [Post]
-        post(_id: ID!): Post
+        post(postId: ID!): Post
         comments: [Comment]
         comment(commentId: ID! ): Comment
     }
@@ -47,7 +47,7 @@ const typeDefs = gql`
     type Mutation {
         addProfile(firstName: String!, lastName: String!,  email: String!, userName: String!,  password: String! ): Auth
         login(userName: String!, password: String!): Auth
-        
+        removeComment(commentId: ID!): Comment
         addPost(profileId:ID, title: String, description: String, userName: String, url: String image: String ): Post
     }
 `;
