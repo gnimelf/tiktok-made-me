@@ -1,62 +1,56 @@
 import React from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import Auth from "../../utils/auth";
 
 export default function Navi(props) {
-    function handleNav(e) {
-        e.preventDefault();
-        if (e.target.name === "Home") {
-            props.handlePageChange("Home");
-        }
-        if (e.target.name === "Login") {
-            props.handlePageChange("Login");
-        }
-        if (e.target.name === "Signup") {
-            props.handlePageChange("Signup");
-        }
-        if (e.target.name === "Logout") {
-            Auth.logout();
-        }
+
+    const logout = (event) => {
+        event.preventDefault();
+        Auth.logout();
     }
 
     return (
         <Navbar className="nav-container" variant="light">
             <Container>
                 <Nav className="me-auto my-3">
-                    <Nav.Link onClick={handleNav} name="Home" href="#">
+                    <Link 
+                        className="btn btn-sm btn-dark m-2" 
+                        to="/"
+                        >
                         Home
-                    </Nav.Link>
+                    </Link>
 
                     {Auth.loggedIn() ? (
                         <>
-                            <Nav.Link
-                                onClick={handleNav}
-                                name="Logout"
-                                href="#"
+                            <Link
+                                className="btn btn-sm btn-dark m-2"
+                                onClick={logout}
                             >
                                 Logout
-                            </Nav.Link>
+                            </Link>
 
-                            <Nav.Link
-                                onClick={handleNav}
-                                name="MyComments"
-                                href="#"
+                            <Link
+                                className="btn btn-sm btn-dark m-2"
+                                to="/mycomments"
                             >
                                 My Comments
-                            </Nav.Link>
+                            </Link>
                         </>
                     ) : (
                         <>
-                            <Nav.Link
-                                onClick={handleNav}
-                                name="Signup"
-                                href="#"
+                            <Link
+                                className="btn btn-sm btn-dark m-2"
+                                to="/login"
                             >
-                                SignUp!
-                            </Nav.Link>
-                            <Nav.Link onClick={handleNav} name="Login" href="#">
                                 Login
-                            </Nav.Link>
+                            </Link>
+                            <Link
+                                className="btn btn-sm btn-dark m-2"
+                                to="/signup"
+                            >
+                                Signup
+                            </Link>
                         </>
                     )}
                 </Nav>
