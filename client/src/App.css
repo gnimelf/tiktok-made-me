@@ -1,0 +1,100 @@
+main {
+  max-width: 1820px;
+  width: 100%;
+  padding: 0 50px;
+  margin-top: 250px;
+  display: flex;
+  justify-content:space-evenly;
+}
+
+div .container {
+  margin-left: 40px;
+}
+
+header {
+  position: relative;
+}
+
+.nav-container{
+  top: 250px
+}
+
+#shape0 {
+  position:absolute;
+  z-index: -3;
+}
+
+#shape1 {
+  position:absolute;
+  z-index: -4;
+}
+
+#shape2 {
+  position: absolute;
+  z-index: -2;
+}
+
+#logo {
+  width: 230px;
+  left: 37px;
+  top: 29px;
+  position: absolute;
+  z-index: -1;
+}
+
+.username {
+  text-align: center;
+}
+
+.img-col {
+  padding: 50px 0 0 0;
+}
+
+.post-user-name {
+  text-align: center;
+}
+
+.card-footer{
+  text-align: center;
+}
+
+.buy-item {
+  border: 0px;
+  background-color: rgb(38, 243, 240);
+}
+
+.add-comment, .login-btn {
+  border: 0px;
+  background-color: rgb(255, 97, 146);
+}
+
+.btn-info:hover, .btn-info:focus, 
+.btn-info:active, .btn-info:active:focus, .btn-info:active:hover, .btn-info:active.focus,
+.btn-info.active, .btn-info.active:focus, .btn-info.active:hover, .btn-info.active.focus,
+.open > .dropdown-toggle.btn-info, 
+.open > .dropdown-toggle.btn-info:hover,
+.open > .dropdown-toggle.btn-info:focus, 
+.open > .dropdown-toggle.btn-info.focus,
+.btn-info.disabled:hover, .btn-info[disabled]:hover, fieldset[disabled] .btn-info:hover,
+.btn-info.disabled:focus, .btn-info[disabled]:focus, fieldset[disabled] .btn-info:focus,
+.btn-info.disabled.focus, .btn-info[disabled].focus, fieldset[disabled] .btn-info.focus {
+  background-color:rgb(31, 200, 197);
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary, 
+.btn-primary:active, .btn-primary:active:focus, .btn-primary:active:hover, .btn-primary:active.focus,
+.btn-primary.active, .btn-primary.active:focus, .btn-primary.active:hover, .btn-primary.active.focus,
+.open > .dropdown-toggle.btn-primary, 
+.open > .dropdown-toggle.btn-primary:hover,
+.open > .dropdown-toggle.btn-primary:focus, 
+.open > .dropdown-toggle.btn-primary.focus,
+.btn-primary.disabled:hover, .btn-primary[disabled]:hover, fieldset[disabled] .btn-primary:hover,
+.btn-primary.disabled:focus, .btn-primary[disabled]:focus, fieldset[disabled] .btn-primary:focus,
+.btn-primary.disabled.focus, .btn-primary[disabled].focus, fieldset[disabled] .btn-primary.focus {
+  background-color: rgb(255, 61, 109);
+
+}
+
+.btn-primary:hover {
+  background-color: rgb(211, 54, 93);
+}
