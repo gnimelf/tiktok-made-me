@@ -8,7 +8,6 @@ const { Profile, Post, Comment } = require("../models");
 const profileSeeds = require("./profileSeeds.json");
 const postSeeds = require("./postSeeds.json");
 const commentSeeds = require("./commentSeeds.json");
-const { count } = require("../models/Comment");
 
 db.once("open", async () => {
     try {
