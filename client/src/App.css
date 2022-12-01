@@ -46,10 +46,6 @@ header {
   text-align: center;
 }
 
-.card {
-  max-width: 275px;
-}
-
 .img-col {
   padding: 50px 0 0 0;
 }
@@ -59,8 +55,7 @@ header {
 }
 
 .card-footer{
-  display: flex;
-  justify-content: space-around;
+  text-align: center;
 }
 
 .buy-item {
@@ -86,7 +81,7 @@ header {
   background-color:rgb(31, 200, 197);
 }
 
-.btn-primary:hover, .btn-primary:focus, 
+.btn-primary:hover, .btn-primary:focus, .btn-primary, 
 .btn-primary:active, .btn-primary:active:focus, .btn-primary:active:hover, .btn-primary:active.focus,
 .btn-primary.active, .btn-primary.active:focus, .btn-primary.active:hover, .btn-primary.active.focus,
 .open > .dropdown-toggle.btn-primary, 
@@ -97,4 +92,9 @@ header {
 .btn-primary.disabled:focus, .btn-primary[disabled]:focus, fieldset[disabled] .btn-primary:focus,
 .btn-primary.disabled.focus, .btn-primary[disabled].focus, fieldset[disabled] .btn-primary.focus {
   background-color: rgb(255, 61, 109);
+
+}
+
+.btn-primary:hover {
+  background-color: rgb(211, 54, 93);
 }
