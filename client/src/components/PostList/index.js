@@ -33,7 +33,7 @@ const PostList = ({ posts }) => {
                             >
                                 View comments
                             </Link>
-                            <Button className="buy-item" variant="info">
+                            <Button className="buy-item" href={post.url} target="_blank" variant="info">
                                 Buy Item
                             </Button>
                         </>
