@@ -48,6 +48,7 @@ const typeDefs = gql`
         addProfile(firstName: String!, lastName: String!,  email: String!, userName: String!,  password: String! ): Auth
         login(userName: String!, password: String!): Auth
         removeComment(commentId: ID!): Comment
+        addComment( postId: ID!, title: String!, commentText: String!): Comment
         addPost(profileId:ID, title: String, description: String, userName: String, url: String image: String ): Post
     }
 `;
